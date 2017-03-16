@@ -24,12 +24,10 @@ TODO
 
 # Authors
 
-<a href="https://github.com/attfarhan"><img src="https://avatars0.githubusercontent.com/u/16265452?v=3&s=460" align="left" height="30px"></a> **** - [[courier-new]](https://github.com/courier-new)
+<a href="https://github.com/attfarhan"><img src="https://avatars0.githubusercontent.com/u/16265452?v=3&s=460" align="left" height="30px"></a> **Farhan Attamimi** 
+<a href="https://github.com/glennhull"><img src="https://avatars3.githubusercontent.com/u/10781869?v=3&s=460" align="left" height="30px"></a> **Glen Hull** 
 
-<a href="https://github.com/glennhull"><img src="https://avatars3.githubusercontent.com/u/10781869?v=3&s=460" align="left" height="30px"></a> **Glen Hull** -  [[auberginekenobi]](https://github.com/auberginekenobi)
-
-<a href="https://github.com/jackhuang19"><img src="https://avatars0.githubusercontent.com/u/25134347?v=3&s=460" align="left" height="30px"></a> **Jack Huang** - [[courier-new]](https://github.com/patrickshao)
-
+<a href="https://github.com/jackhuang19"><img src="https://avatars0.githubusercontent.com/u/25134347?v=3&s=460" align="left" height="30px"></a> **Jack Huang** 
 
 # License
 
