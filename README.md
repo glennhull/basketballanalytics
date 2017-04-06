@@ -20,7 +20,7 @@ Our database will have tables for players and their statistics for individual ga
 
 # Usage
 
-TODO
+To run the development server, run `python manage.py runserver` in this directory.  It will run on port 8000 by default.  Navigate to http://127.0.0.1:8000/.
 
 # Authors
 
