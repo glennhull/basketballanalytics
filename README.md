@@ -22,6 +22,11 @@ Our database will have tables for players and their statistics for individual ga
 
 To run the development server, run `python manage.py runserver` in this directory.  It will run on port 8000 by default.  Navigate to http://127.0.0.1:8000/.
 
+# Development 
+
+To create a new 'app' (a python package that is essentially a new separate of the web app that would require different templates, etc.), run 'python manage.py startapp your_app_name_here' and your_app_name_here into the INSTALLED_APPS array in settings.py.
+
+For templates, you need to first create a new `templates` direct in the app directory (for example, in the player app, a folder called templates), and then create a subdirectory named identically to the app's name in the templates directory (so in player directory: player/templates/player).  You should put your templates in the subdirectory.
 # Authors
 
 <a href="https://github.com/attfarhan"><img src="https://avatars0.githubusercontent.com/u/16265452?v=3&s=460" align="left" height="30px"></a> **Farhan Attamimi** 
