@@ -9,7 +9,8 @@ from django.template import loader
 
 def index(request):
 	template = loader.get_template('app/index.html')
-	return HttpResponse(template.render(request))
+	context = {}
+	return HttpResponse(template.render(context, request))
 	# return HttpResponse("You're at index")
 
 def first(request):
