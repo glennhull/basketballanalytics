@@ -6,6 +6,7 @@ from django.db import models
 # Create your models here.
 class Team(models.Model):
 	team_id = models.CharField(max_length=200)
+	team_slug = models.CharField(max_length=200)
 	ppg = models.DecimalField(max_digits=5, decimal_places=1)
 	apg = models.DecimalField(max_digits=5, decimal_places=1)
 	rpg = models.DecimalField(max_digits=5, decimal_places=1)

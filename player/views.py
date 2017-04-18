@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-from player.models import Player
+# from player.models import Player
 # Create your views here.
 from django.http import HttpResponse
 from django.template import loader
@@ -26,8 +26,8 @@ def player_page(request, player_name):
 		'rpg' : rpg,
 	}
 	player_entry_count = Player.objects.filter(player_name = player_name).count()
-	if player_entry_count == 0:
-		add_player(player_name)
+	# if player_entry_count == 0:
+		# add_player(player_name)
 
 	return HttpResponse(template.render(context, request))
 
