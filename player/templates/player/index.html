@@ -3,9 +3,15 @@
 <head></head>
 <body>
 <h1>{{player_name}}'s page</h1>
-{{output}}
-<p>{{ppg}}</p>
-<p>{{apg}}</p>
-<p>{{rpg}}</p>
+{% if player %}
+	{% for p in player %}
+		Position: <b>{{ p.position }}</b>
+	{% endfor %}
+{% endif %}
+{{player_id}}
+{{season_stats}}
+<p>PPG: {{ppg}}</p>
+<p>APG: {{apg}}</p>
+<p>RPG: {{rpg}}</p>
 </body>
 </html>

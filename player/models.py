@@ -10,9 +10,12 @@ class Player(models.Model):
 	player_name = models.CharField(max_length=200)
 	position = models.CharField(max_length=10)
 	team_id = models.CharField(max_length=200)
-		
+	
+	def __str__(self):
+		return self.player_name
+
 class Season_Stats(models.Model):
-	player_id = models.ForeignKey(Player, on_delete=models.CASCADE)
+	player_id = models.CharField(max_length=200)
 	ppg = models.DecimalField(max_digits=5, decimal_places=1)
 	apg = models.DecimalField(max_digits=5, decimal_places=1)
 	rpg = models.DecimalField(max_digits=5, decimal_places=1)
