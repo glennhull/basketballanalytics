@@ -7,6 +7,7 @@ from django.db import models
 class Team(models.Model):
 	team_id = models.CharField(max_length=200)
 	team_slug = models.CharField(max_length=200)
+	team_name = models.CharField(max_length=200)
 	ppg = models.DecimalField(max_digits=5, decimal_places=1)
 	apg = models.DecimalField(max_digits=5, decimal_places=1)
 	rpg = models.DecimalField(max_digits=5, decimal_places=1)
@@ -18,6 +19,6 @@ class Team(models.Model):
 	threept_attempted = models.DecimalField(max_digits=5, decimal_places=1)
 	threept_made = models.DecimalField(max_digits=5, decimal_places=1)
 	fastbreak_points = models.DecimalField(max_digits=5, decimal_places=1)
-	paint_points = models.DecimalField(max_digits=5, decimal_places=1)
+	paint_points = models.DecimalField(max_digits=5, decimal_places=1, null=True)
 	turnover_points = models.DecimalField(max_digits=5, decimal_places=1)
 	secondchance_points = models.DecimalField(max_digits=5, decimal_places=1)

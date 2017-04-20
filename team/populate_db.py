@@ -42,7 +42,7 @@ def team():
 
 def add_team(team_id, team_slug, team_name, ppg, apg, rpg, bpg, spg, fga, fgm, tpg, threept_attempted, 
 	threept_made, fastbreak_points, turnover_points, secondchance_points):
-	team = Team.objects.create(team_id = team_id, team_slug = team_slug, ppg = ppg, apg = apg, rpg = rpg, bpg = bpg,
+	team = Team.objects.create(team_id = team_id, team_slug = team_slug, team_name = team_name, ppg = ppg, apg = apg, rpg = rpg, bpg = bpg,
 		spg = spg, fga = fga, fgm = fgm, tpg = tpg, threept_attempted = threept_attempted, threept_made = threept_made, 
 		fastbreak_points = fastbreak_points, turnover_points = turnover_points, secondchance_points = secondchance_points)
 	team.save()
