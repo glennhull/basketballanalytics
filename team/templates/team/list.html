@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+{% load static %}
+<html>
+<head>
+<link href="{% static 'bootstrap-landing/css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+{% include "components/nav.html" %}
+<body style="padding-top:7.5%">
+<div id="wrapper">
+	
+	<table class="table table-bordered table-hover table-responsive">
+	<tbody>
+	{% for slug, name in teams.items %}	
+		{% cycle '<tr>' '' '' ''%}
+		<div class="row text-center" style="margin: 0 auto">
+			<div class="col-xs-6 col-md-3">
+			<a href="{% url 'team:team_page' team_slug=slug%}">
+			<div class="thumbnail" style="text-align:center;">
+				{% with 'team_logos/'|add:slug|add:'.png' as team_slug %} 
+					<img src="{% static team_slug %}" alt="">
+				{% endwith %}
+			<div class="caption">
+				<h3>{{name}}</h3>	
+			</div>
+			</div>
+			</a>
+			</div>
+	{% endfor %}
+	</tbody>	
+	</table>
+</div>
+</body>
+</html>
