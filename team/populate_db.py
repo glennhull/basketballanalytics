@@ -47,4 +47,31 @@ def add_team(team_id, team_slug, team_name, ppg, apg, rpg, bpg, spg, fga, fgm, t
 		fastbreak_points = fastbreak_points, turnover_points = turnover_points, secondchance_points = secondchance_points)
 	team.save()
 
+# Should probably move these into a separate query file
+def get_team_slugs():
+	team_slug_q = New_query.ss_get_results(sport='basketball',league='nba',ep='teams')[0]['teams']
+	length = len(team_slug_q)
+	teams = []
+	for i in range(length):
+		teams.append(team_slug_q[i]['slug'])
+	return teams
+
+def get_team_name():
+	team_slug_q = New_query.ss_get_results(sport='basketball',league='nba',ep='teams')[0]['teams']
+	length = len(team_slug_q)
+	teams = []
+	for i in range(length):
+		teams.append(team_slug_q[i]['name'] + "_" + team_slug_q[i]['nickname'])
+	return teams
+
+def get_team_dict():
+	teams = New_query.ss_get_results(sport='basketball', league='nba', ep='teams')
+	team_name_dict = {}
+
+	for t in teams[0]['teams']: 
+		team_slug = t['slug']
+		team_name = t['name'] + " " + t['nickname']
+		team_name_dict[team_slug] = team_name
+	return team_name_dict
+
 team()
