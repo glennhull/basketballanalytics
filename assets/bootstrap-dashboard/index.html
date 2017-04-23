@@ -225,10 +225,11 @@
                             <div class="panel-body">
                             <div class="list-group">
                             {% for player, position in roster.items %}                                
-                                    <a href="#" class="list-group-item">
-                                        <span class="badge">{{position}}</span>
-                                        <i class=""></i>{{player}}
-                                    </a>
+                                    {% with player_link=player %} 
+                                    <a href="{% url 'player:player_page' player_link %}" class="list-group-item">
+                                    {% endwith %}
+                                    <span class="badge">{{position}}</span>
+                                    {{player}}
                             {% endfor %}
                                 </div>
                                 <div class="text-right">
