@@ -92,5 +92,6 @@ def add_game_log(game_log_id, player_id, team_id, opponent_id, pts, assists, reb
 	away_team_score = away_team_score, team_score = team_score, team_outcome = team_outcome)
 	gl.save()
 
-players()
-season_stats()
+# LEave these commented out so we dont hit API again.
+# players()
+# season_stats()
