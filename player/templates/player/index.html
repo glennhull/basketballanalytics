@@ -13,7 +13,36 @@
 <p>PPG: {{ppg}}</p>
 <p>APG: {{apg}}</p>
 <p>RPG: {{rpg}}</p>
+<p>BPG: {{bpg}}</p>
+<p>SPG: {{spg}}</p>
 <p>TEAM ID: {{team_id}}</p>
 {{team_name}}
+<p>Wanted to get some basic plotting in. This graph is of the each of the above character for player compared to league average. I'll add labels next commit</p>
 </body>
-</html>
+<!-- Load c3.css -->
+<link href="/assets/c3/c3.css" rel="stylesheet" type="text/css">
+
+<!-- Load d3.js and c3.js -->
+<script src="/assets/d3.v3.min.js" charset="utf-8"></script>
+<script src="/assets/c3/c3.min.js" charset="utf-8"></script>
+
+<div id="chart"></div>
+<script type="text/javascript">
+var chart = c3.generate({
+    data: {  
+  		columns: [
+
+            ['Player Stats', {{ppg}}, {{apg}}, {{rpg}}, {{bpg}}, {{spg}}],
+            ['League Average', 13, 4, 5, 1, 1]
+        ],
+        type: 'bar'
+    },
+    bar: {
+        width: {
+            ratio: 0.5 // this makes bar width 50% of length between ticks
+        }
+        // or
+        //width: 100 // this makes bar width 100px
+    }
+});
+</script>

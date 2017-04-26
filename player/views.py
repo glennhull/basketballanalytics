@@ -23,6 +23,8 @@ def player_page(request, player_name):
 	ppg = season_stats.values('ppg')[0]['ppg']
 	apg = season_stats.values('apg')[0]['apg']
 	rpg = season_stats.values('rpg')[0]['rpg']
+	bpg = season_stats.values('bpg')[0]['bpg']
+	spg = season_stats.values('spg')[0]['spg']
 	template = loader.get_template('player/index.html')
 	context = {
 		'player_name' : pname,
@@ -32,8 +34,10 @@ def player_page(request, player_name):
 		'ppg' : ppg,
 		'apg' : apg,
 		'rpg' : rpg,
+		'bpg' : bpg,
+		'spg' : spg,
 		'team_id': ttid,
-		'team_name': tname,
+		'team_name': tname
 	}
 	return HttpResponse(template.render(context, request))
 
