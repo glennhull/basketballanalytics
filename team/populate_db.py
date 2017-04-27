@@ -74,4 +74,4 @@ def get_team_dict():
 		team_name_dict[team_slug] = team_name
 	return team_name_dict
 
-team()
+# team()
