@@ -41,47 +41,50 @@
     }
 </script>
 </head>
+
 <body>
 {% include 'components/nav.html' %}
 
-<h1 style="text-align:center;padding-top:30px"> User dashboard </h1>
+<h1 style="text-align:center;padding-top:50px"> User dashboard </h1>
+<div style="text-align:center">
     <form onsubmit="var sel = this.getElementsByTagName('select')[0].value; addLink(sel); return false">
-    <select name="item_id">
-        <option value="nba-atl">Atalnta Hawks</option>
-        <option value="nba-bk">Brooklyn Nets</option>
-        <option value="nba-bos">Boston Celtics</option>
-        <option value="nba-cha">Charlotte Hornets</option>
-        <option value="nba-chi">Chicago Bulls</option>
-      <option value="nba-cle">Cleveland Cavs</option>
-      <option value="nba-dal">Dallas Mavs</option>
-      <option value="nba-den">Denver Nuggets</option>
-      <option value="nba-den">Detroit Pistons</option>
-        <option value="nba-gs">Golden State Warriors</option>
-        <option value="nba-hou">Houston Rockets</option>
-        <option value="nba-ind">Indiana Pacers</option>
-      <option value="nba-lac">LA Clippers</option>
-      <option value="nba-lal">LA Lakers</option>
-      <option value="nba-mem">Memphis Grizzlies</option>
-      <option value="nba-mia">Miami Heat</option>
-      <option value="nba-mil">Milwaukee Bucks</option>
-      <option value="nba-min">Minnesota Timberwolves</option>
-      <option value="nba-no">New Orleans Pelicans</option>
-      <option value="nba-ny">New York Knicks</option>
-        <option value="nba-okc">OKC</option>
-        <option value="nba-orl">Orlando Magic</option>
-        <option value="nba-phi">76ers</option>
-        <option value="nba-pho">Suns</option>
-      <option value="nba-por">Blazers</option>
-      <option value="nba-sa">Spurs</option>
-      <option value="nba-sac">Kings</option>
-      <option value="nba-tor">Raptors</option>
-      <option value="nba-uta">Jazz</option>
-      <option value="nba-was">Wizards</option>
-    </select>
-    <button type="submit" name="submit" value="submit">Submit</button>
+        <select name="item_id">
+            <option value="nba-atl">Atlanta Hawks</option>
+            <option value="nba-bk">Brooklyn Nets</option>
+            <option value="nba-bos">Boston Celtics</option>
+            <option value="nba-cha">Charlotte Hornets</option>
+            <option value="nba-chi">Chicago Bulls</option>
+            <option value="nba-cle">Cleveland Cavs</option>
+            <option value="nba-dal">Dallas Mavs</option>
+            <option value="nba-den">Denver Nuggets</option>
+            <option value="nba-den">Detroit Pistons</option>
+            <option value="nba-gs">Golden State Warriors</option>
+            <option value="nba-hou">Houston Rockets</option>
+            <option value="nba-ind">Indiana Pacers</option>
+            <option value="nba-lac">LA Clippers</option>
+            <option value="nba-lal">LA Lakers</option>
+            <option value="nba-mem">Memphis Grizzlies</option>
+            <option value="nba-mia">Miami Heat</option>
+            <option value="nba-mil">Milwaukee Bucks</option>
+            <option value="nba-min">Minnesota Timberwolves</option>
+            <option value="nba-no">New Orleans Pelicans</option>
+            <option value="nba-ny">New York Knicks</option>
+            <option value="nba-okc">OKC</option>
+            <option value="nba-orl">Orlando Magic</option>
+            <option value="nba-phi">76ers</option>
+            <option value="nba-pho">Suns</option>
+            <option value="nba-por">Blazers</option>
+            <option value="nba-sa">Spurs</option>
+            <option value="nba-sac">Kings</option>
+            <option value="nba-tor">Raptors</option>
+            <option value="nba-uta">Jazz</option>
+            <option value="nba-was">Wizards</option>
+        </select>
+        <button type="submit" name="submit" class="btn" value="submit">Add</button>
 </form>
+</div>
 <div id="wrapper">
-<div >
+<div>
     <div id="0" class="embed-responsive embed-responsive-16by9"></div>
     <div id="1" class="embed-responsive embed-responsive-16by9"></div>    
     <div id="2" class="embed-responsive embed-responsive-16by9"></div>
