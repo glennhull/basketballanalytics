@@ -17,11 +17,15 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include, url
 from django.views.generic import TemplateView
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url(r'^team/', include('team.urls'), name='team'),
 	url(r'^player/', include('player.urls'), name='player'),
     url(r'^admin/', admin.site.urls),
+    url(r'^home/', TemplateView.as_view(template_name='login/home.html'), name='home'),
+    url(r'^login/$', auth_views.login, {'template_name': 'login/login.html'}, name='login'),
+    url(r'^logout/$', auth_views.logout, {'template_name': 'bootstrap-landing/index.html'}, name='logout'),
     url(r'^$', include('index.urls'), name='index')
 ]
 

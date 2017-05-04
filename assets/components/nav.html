@@ -31,7 +31,11 @@
                     </li>
                     
                     <li>
-                        <a href="#contact">Contact</a>
+                    {% if user.is_authenticated %}
+                        <a href="/logout">Logout</a>
+                    {% else %}
+                        <a href="/login">Login</a>
+                    {% endif %}
                     </li>
                 </ul>
             </div>
