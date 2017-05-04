@@ -1,23 +1,132 @@
 <!DOCTYPE HTML>
 <html>
-<head></head>
-<body>
-<h1>{{player_name}}'s page</h1>
-{% if player %}
-	{% for p in player %}
-		Position: <b>{{ p.position }}</b>
-	{% endfor %}
-{% endif %}
-{{player_id}}
-{{season_stats}}
-<p>PPG: {{ppg}}</p>
-<p>APG: {{apg}}</p>
-<p>RPG: {{rpg}}</p>
-<p>BPG: {{bpg}}</p>
-<p>SPG: {{spg}}</p>
-<p>TEAM ID: {{team_id}}</p>
-{{team_name}}
-<p>Wanted to get some basic plotting in. This graph is of the each of the above character for player compared to league average. I'll add labels next commit</p>
+<head>
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin - Bootstrap Admin Template</title>
+    {% load static %}
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'team-dashboard/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'team-dashboard/css/sb-admin.css' %}" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="{% static 'team-dashboard/css/plugins/morris.css' %}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{% static 'team-dashboard/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+</head>
+<body style = "background: white;">
+        {% include "components/nav.html" %}
+    <h1 style = " text-align: center; padding-top: 20px">{{player_name}}</h1>
+    {% if player %}
+    	{% for p in player %}
+        <div style = "text-align: center; background: #ADD8E6; padding-top: 10px;
+                            padding-bottom: 10px; width:80%;margin-left:auto;margin-right:auto;">
+    		  <h3>Position: {{ p.position}}</h3> 
+              <h3>{{team_name}}</h3>
+        </div>
+    	{% endfor %}
+    {% endif %}
+    {{season_stats}}
+    <div style = "text-align: center; padding-top: 20px;">
+        <div class="row" style = "padding-left: 22%;">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <div class="huge">PPG</div>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{ppg}}</div>                                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-green">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <div class="huge">APG</div>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{apg}}</div>          
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <div class="huge">RPG</div>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{rpg}}</div>         
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="row" style = "padding-left: 35%;">
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-yellow">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <div class="huge">SPG</div>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{spg}}</div>         
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="panel panel-red">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <div class="huge">BPG</div>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">{{bpg}}</div>                                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <div style = "text-align: center;">
+        <h3 style = "text-align: center; background: #ADD8E6; padding-top: 10px;
+                            padding-bottom: 10px; width:80%; margin-left:auto;margin-right:auto;">
+            Player vs League</h3>
+    </div>
 </body>
 <!-- Load c3.css -->
 <link href="/assets/c3/c3.css" rel="stylesheet" type="text/css">
@@ -26,7 +135,7 @@
 <script src="/assets/d3.v3.min.js" charset="utf-8"></script>
 <script src="/assets/c3/c3.min.js" charset="utf-8"></script>
 
-<div id="chart"></div>
+<div id="chart" style = "width: 80%; margin-left:auto;margin-right:auto;"></div>
 <script type="text/javascript">
 var chart = c3.generate({
     data: {  
